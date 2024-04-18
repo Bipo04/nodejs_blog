@@ -1,3 +1,292 @@
-h1 {
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    height: 100%;
+    color: white;
+    font-family: "Sen", sans-serif;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    font-size: 30px;
     color: red;
+}
+
+.menu-container {
+    flex: 6;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+}
+
+.menu-list-item {
+    margin-right: 30px;
+}
+
+.menu-list-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.search-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.searchTerm {
+    width: 200px;
+    border: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    background-color: aliceblue;
+
+}
+
+.searchTerm:focus{
+    color: black;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px;
+    background: black;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.profile-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile-text-container {
+    margin: 0 20px;
+    position: relative;
+}
+
+.profile-picture {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.profile-text {
+    background-color: black;
+    color: white;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+.profile-dropdown {
+    display: block;
+    position: absolute;
+    background-color: black;
+    color: white;
+    top: 30px;
+    width: 120px;
+    left: -10px;
+}
+
+.dropdown-active {
+    display: none ;
+}
+
+
+.profile-dropdown ul {
+    padding: 0;
+}
+
+.profile-dropdown ul li{
+    padding: 5px 17px 15px 17px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.profile-dropdown ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.container {
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color: white;
+}
+
+.featured-content {
+    width: 100%;
+    height: 60vh;
+    padding: 50px;
+    position: relative;
+}
+
+.featured-title {
+    font-size: 50px;
+    font-family: "Sen", sans-serif;
+    font-weight: bold;
+    color: lightgray;
+    position: absolute;
+    top: 120px;
+}
+
+.featured-desc {
+    width: 500px;
+    color: lightgray;
+    margin: 30px 0;
+    position: absolute;
+    top: 170px;
+}
+
+.featured-button {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 300px;
+}
+
+.movie-list-container {
+    padding: 0 20px;
+}
+
+.movie-list-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-list {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+
+.movie-list-item {
+    margin-right: 30px;
+    position: relative;
+}
+
+.movie-list-item:hover .movie-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.movie-list-item:hover .movie-list-item-title,
+.movie-list-item:hover .movie-list-item-desc,
+.movie-list-item:hover .movie-list-item-button {
+    opacity: 1;
+}
+
+.movie-list-item-img {
+    transition: all 1s ease-in-out;
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.movie-list-item-title {
+    background-color: rgba(0,0,0,0);
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-desc {
+    background-color: rgba(0,0,0,0);
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    width: 230px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-item-button {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.arrow {
+    font-size: 50px;
+    position: absolute;
+    top: 125px;
+    right: 0;
+    color: lightgray;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px){
+    .menu-container{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .search-container{
+        display: none;
+    }
 }

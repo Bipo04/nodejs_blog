@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/log-reg.css">
+    <script>
+        //Xóa dữ liệu khi refresh trang
+        window.onload = function() {
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="login form">
+        <header>Login</header>
+        <form action="" method="post" id="form-log">
+            <div class="formm">
+                <input type="text" name="username" id="user-log" placeholder="Enter your username">
+                 <span class="form-message"></span>
+            </div>
+            <div class="formm">
+                <input type="password" name="password" id="pass-log" placeholder="Enter your password">
+                <span class="form-message"></span>
+            </div>
+            <input type="submit" name="btn-log" class="button" value="Login">
+        </form>
+        <div class="signup">
+            <span style="color: white;" class="signup">Don't have an account?
+            <a style="text-decoration: none; font-size: 17px; font-weight: 600;" href="register">Đăng ký</a>
+            </span>
+        </div>
+        </div>
+    </div>
+    <script src="js/log.js"></script>
+    <script>
+        Validator({
+            form: '#form-log',
+            rules: [
+                Validator.isRequired('#user-log', 'Vui lòng nhập tài khoản'),
+                Validator.isRequired('#pass-log', 'Vui lòng nhập mật khẩu')      
+            ]
+        })
+    </script>
+</body>
+</html>

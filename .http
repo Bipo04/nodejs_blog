@@ -1,0 +1,12 @@
+
+GET http://localhost:8000/login
+
+###
+POST  http://localhost:8000/register
+Content-Type: application/json
+
+{
+    "fullname": "Lê Quốc Đảng",
+    "username": "ledang",
+    "password": "123"
+}

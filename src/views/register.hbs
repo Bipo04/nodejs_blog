@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/log-reg.css">
+
+    <script>
+        //Xóa dữ liệu khi refresh trang
+        window.onload = function() {
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="register form">
+            <header>Sign up</header>
+            <form action="" method="post" id="form-reg">
+                <div class="formm">
+                    <input type="text" name="fullname" id="name-reg" placeholder="Enter your fullname">
+                    <span class="form-message"></span>
+                </div>
+                <div class="formm">
+                    <input type="text" name="username" id="user-reg" placeholder="Enter your username">
+                    <span class="form-message"></span>
+                </div>
+                <div class="formm">
+                    <input type="text" name="password" id="pass-reg" placeholder="Create a password">
+                    <span class="form-message"></span>
+                </div>
+                <input type="submit" name="btn_reg" class="button" value="Sign up">
+            </form>
+        <div class="signup">
+            <span style="color: white;" class="signup">Already have an account?
+            <a style="text-decoration: none; font-size: 17px; font-weight: 600;" href="login">Đăng nhập</a>
+            </span>
+        </div>
+        </div>
+    </div>
+    <script src="js/log.js"></script>
+    <script>
+        Validator({
+            form: '#form-reg',
+            rules: [
+                Validator.isRequired('#name-reg', 'Vui lòng nhập tên'),
+                Validator.isRequired('#user-reg', 'Vui lòng nhập tài khoản'),
+                Validator.isRequired('#pass-reg', 'Vui lòng nhập mật khẩu')      
+            ]
+        })
+    </script>
+</body>
+</html>
