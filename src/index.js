@@ -2,8 +2,24 @@ import express from 'express';
 import path from 'path';
 import route from './routes';
 const handlebars = require('express-handlebars')
-require('./config/db')
+import { sequelize, connection} from './config/db'
 require('dotenv').config()
+
+connection()
+const { QueryTypes, Sequelize, DATE } = require('sequelize');
+// const sequelize = new Sequelize('sqlite::memory:');
+
+sequelize.query('SELECT * FROM `users`', {
+  type: QueryTypes.SELECT,
+})
+.then(users => {
+  console.log(users);
+})
+.catch(error => {
+  console.error('Error executing custom query:', error);
+});
+
+
 
 const app = express()
 const port = process.env.PORT || 3000

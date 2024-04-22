@@ -1,9 +1,9 @@
-const express = require('express')
-const router = express.Router()
+import express from 'express';
+import { index } from '../controllers/ProductController';
+const router = express.Router();
 
-const productController = require('../controllers/ProductController')
 
-router.get('/:slug', productController.index)
-router.get('/', productController.index)
+router.get('/:slug', index)
+router.get('/', index)
 
 module.exports = router

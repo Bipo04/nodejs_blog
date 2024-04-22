@@ -1,7 +1,4 @@
-class ProductController {
-    index (req, res) {
-        res.render('products')
-    }
-}
 
-module.exports = new ProductController
+export const index = (req, res) => {
+    res.render('products')
+}

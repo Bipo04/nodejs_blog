@@ -5,9 +5,13 @@ const router = express.Router()
 const sideController = require('../controllers/SideController')
 
 router.get('/trangchu', sideController.index)
+
 router.get('/login', (req, res) => {
     res.render('login', {"layout": false})
 })
+
+router.post('/login')
+
 router.get('/register', (req, res) => {
     res.render('register', {"layout": false})
 })

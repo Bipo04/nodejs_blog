@@ -32,8 +32,10 @@ function Validator(options) {
                     var errorMessage = rule.test(inputElement.value)
                     if(!errorMessage) {
                         errorElement.innerHTML = rule.mess
+                        inputElement.classList.add('err')
                     } else {
                         errorElement.innerHTML = ''
+                        inputElement.classList.remove('err')
                     }
                 }
             }

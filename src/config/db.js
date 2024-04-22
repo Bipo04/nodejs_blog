@@ -1,6 +1,6 @@
 const {Sequelize} = require('sequelize')
 
-const sequelize = new Sequelize('Web', 'root', '', {
+export const sequelize = new Sequelize('Web', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     logging: false,
@@ -12,7 +12,7 @@ const sequelize = new Sequelize('Web', 'root', '', {
       }
 });
 
-const connection = async () => {
+export const connection = async () => {
     sequelize.authenticate()
     .then(() => {
         console.log('Connecting to database successfully!')
@@ -22,4 +22,3 @@ const connection = async () => {
     })
 }
 
-connection()
